@@ -1,9 +1,9 @@
 import Head from "next/head";
-import { useState } from "react";
-import { Header, HomeScreen, ContactUs } from "../Components";
+import { Header, HomeScreen, ContactUs, ChatBot } from "../Components";
+import globalStore from "../Store/globalStore";
+import { observer } from "mobx-react";
 
-export default function Home() {
-  const [activePage, setActivePage] = useState("Home");
+const Home = observer(() => {
   return (
     <div className={"container"}>
       <Head>
@@ -13,12 +13,15 @@ export default function Home() {
       </Head>
 
       <main className={"main"}>
-        <Header activePage={activePage} setActivePage={setActivePage} />
-        {activePage === "Home" && <HomeScreen />}
-        {activePage === "ContactUs" && <ContactUs />}
+        <Header />
+        {globalStore.activePage === "Home" && <HomeScreen />}
+        {globalStore.activePage === "ContactUs" && <ContactUs />}
+        <ChatBot />
       </main>
 
       <footer className={"footer"}></footer>
     </div>
   );
-}
+});
+
+export default Home;

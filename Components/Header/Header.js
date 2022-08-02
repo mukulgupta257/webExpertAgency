@@ -1,24 +1,29 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect } from "react";
+import { observer } from "mobx-react";
 import Image from "next/image";
 import style from "./head.module.css";
+import globalStore from "../../Store/globalStore";
 
-const Header = ({ activePage, setActivePage }) => {
-  const [activeBar, setActiveBar] = useState(false);
+const Header = observer(() => {
   useEffect(() => {
     const resize = () => {
-      window.innerWidth > 1020 && setActiveBar(true);
+      window.innerWidth > 1020 && globalStore.setActiveBar(true);
     };
     resize();
     window.addEventListener("resize", resize);
   }, []);
   const handleNavigation = (e) => {
-    setActivePage(e.target.innerText);
+    console.log(globalStore.activePage);
+    globalStore.setActivePage(e.target.innerText);
     if (window.innerWidth > 1020 === false) {
       handleSideBar();
     }
   };
   const handleSideBar = () => {
-    !activeBar ? setActiveBar(true) : setActiveBar(false);
+    console.log(!globalStore.activeBar);
+    !globalStore.activeBar
+      ? globalStore.setActiveBar(true)
+      : globalStore.setActiveBar(false);
   };
   return (
     <div>
@@ -45,12 +50,12 @@ const Header = ({ activePage, setActivePage }) => {
         </div>
         <div
           className={style.navMenu}
-          style={{ maxWidth: !activeBar ? "0px" : "100%" }}
+          style={{ maxWidth: !globalStore.activeBar ? "0px" : "100%" }}
         >
           <ul>
             <li
               className={`${style.menu} ${
-                activePage === "Home" ? style.active : ""
+                globalStore.activePage === "Home" ? style.active : ""
               }`}
               onClick={handleNavigation}
             >
@@ -58,7 +63,7 @@ const Header = ({ activePage, setActivePage }) => {
             </li>
             <li
               className={`${style.menu} ${
-                activePage === "Services" ? style.active : ""
+                globalStore.activePage === "Services" ? style.active : ""
               }`}
               onClick={handleNavigation}
             >
@@ -66,7 +71,7 @@ const Header = ({ activePage, setActivePage }) => {
             </li>
             <li
               className={`${style.menu} ${
-                activePage === "AboutUs" ? style.active : ""
+                globalStore.activePage === "AboutUs" ? style.active : ""
               }`}
               onClick={handleNavigation}
             >
@@ -74,7 +79,7 @@ const Header = ({ activePage, setActivePage }) => {
             </li>
             <li
               className={`${style.menu} ${
-                activePage === "ContactUs" ? style.active : ""
+                globalStore.activePage === "ContactUs" ? style.active : ""
               }`}
               onClick={handleNavigation}
             >
@@ -82,7 +87,7 @@ const Header = ({ activePage, setActivePage }) => {
             </li>
             <li
               className={`${style.menu} ${
-                activePage === "Pricing" ? style.active : ""
+                globalStore.activePage === "Pricing" ? style.active : ""
               }`}
               onClick={handleNavigation}
             >
@@ -93,6 +98,6 @@ const Header = ({ activePage, setActivePage }) => {
       </div>
     </div>
   );
-};
+});
 
 export default Header;

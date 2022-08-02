@@ -1,10 +1,21 @@
 import React from "react";
 import Image from "next/image";
+import globalStore from "../../Store/globalStore";
+import { observer } from "mobx-react";
 
-export default function ChatBot() {
+const ChatBot = observer(() => {
   return (
-    <div className="ChatBot" id="chatBot">
-      <Image src={""} width="100%" height={"100%"} alt="ChatBot" />
-    </div>
+    <>
+      <div className="ChatBot" id="chatBot">
+        <div className="msg">1</div>
+        <Image
+          src={"/assets/chat.png"}
+          width="100%"
+          height={"100%"}
+          alt="ChatBot"
+        />
+      </div>
+    </>
   );
-}
+});
+export default ChatBot;
