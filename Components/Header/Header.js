@@ -13,14 +13,12 @@ const Header = observer(() => {
     window.addEventListener("resize", resize);
   }, []);
   const handleNavigation = (e) => {
-    console.log(globalStore.activePage);
     globalStore.setActivePage(e.target.innerText);
     if (window.innerWidth > 1020 === false) {
       handleSideBar();
     }
   };
   const handleSideBar = () => {
-    console.log(!globalStore.activeBar);
     !globalStore.activeBar
       ? globalStore.setActiveBar(true)
       : globalStore.setActiveBar(false);

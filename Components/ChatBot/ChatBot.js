@@ -5,7 +5,7 @@ import { observer } from "mobx-react";
 
 const ChatBot = observer(() => {
   return (
-    <>
+    <div className="chatBotContainer">
       <div className="ChatBot" id="chatBot">
         <div className="msg">1</div>
         <Image
@@ -15,7 +15,7 @@ const ChatBot = observer(() => {
           alt="ChatBot"
         />
       </div>
-    </>
+    </div>
   );
 });
 export default ChatBot;

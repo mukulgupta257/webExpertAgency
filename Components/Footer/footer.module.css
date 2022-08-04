@@ -1,0 +1,11 @@
+.footer {
+  width: 100vw;
+  overflow: hidden;
+  background-color: #030839;
+  height: 150px;
+  color: aliceblue;
+  padding: 10px 0px;
+  display: flex;
+  justify-content: center;
+  position: absolute;
+}

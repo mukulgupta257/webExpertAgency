@@ -1,5 +1,5 @@
 import Head from "next/head";
-import { Header, HomeScreen, ContactUs, ChatBot } from "../Components";
+import { Header, HomeScreen, ContactUs, ChatBot, Footer } from "../Components";
 import globalStore from "../Store/globalStore";
 import { observer } from "mobx-react";
 
@@ -16,10 +16,9 @@ const Home = observer(() => {
         <Header />
         {globalStore.activePage === "Home" && <HomeScreen />}
         {globalStore.activePage === "ContactUs" && <ContactUs />}
-        <ChatBot />
+        {/* <ChatBot /> */}
       </main>
-
-      <footer className={"footer"}></footer>
+      <Footer />
     </div>
   );
 });
