@@ -12,7 +12,7 @@ const ContactUs = () => {
       ],
       view: new ol.View({
         center: ol.proj.fromLonLat([77.1388, 28.7471]),
-        zoom: 15,
+        zoom: 12,
       }),
     });
   }, []);

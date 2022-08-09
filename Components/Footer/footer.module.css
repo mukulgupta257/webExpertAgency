@@ -1,11 +1,45 @@
 .footer {
   width: 100vw;
   overflow: hidden;
-  background-color: #030839;
-  height: 150px;
+  background-color: #fff;
   color: aliceblue;
   padding: 10px 0px;
   display: flex;
-  justify-content: center;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
+}
+.upperFooter {
+  width: 98%;
+  height: 220px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: blue;
+}
+.upperFooterSection {
+  width: 28%;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  font-size: 30px;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+}
+.footertext {
+  width: 100%;
+  word-wrap: break-word;
+  text-align: center;
+}
+.lowerFooter {
+  width: 100%;
+  display: flex;
+  gap: 3%;
+  height: 400px;
+  font-size: 40px;
+  padding: 5px 5px;
+}
+.lowerFooterSection {
+  min-width: 30%;
 }

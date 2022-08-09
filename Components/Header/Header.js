@@ -29,12 +29,11 @@ const Header = observer(() => {
         <div className={style.company}>
           <div className={style.companyInfo}>
             <Image
-              src="/icon.png"
+              src="/image2.png"
               alt="Compnay Logo"
-              width="110px"
-              height="65px"
+              width="288px"
+              height="80px"
             />
-            <span>Web Expert Agency</span>
           </div>
           <div className={style.expandIcon}>
             <Image
