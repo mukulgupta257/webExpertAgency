@@ -29,7 +29,7 @@ const Header = observer(() => {
         <div className={style.company}>
           <div className={style.companyInfo}>
             <Image
-              src="/image2.png"
+              src="/LogoWhite.png"
               alt="Compnay Logo"
               width="288px"
               height="80px"

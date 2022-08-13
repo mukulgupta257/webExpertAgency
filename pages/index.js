@@ -18,7 +18,7 @@ const Home = observer(() => {
         {globalStore.activePage === "ContactUs" && <ContactUs />}
         {/* <ChatBot /> */}
       </main>
-      <Footer />
+      {/* <Footer /> */}
     </div>
   );
 });

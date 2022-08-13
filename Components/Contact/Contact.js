@@ -2,20 +2,6 @@ import React, { useEffect, useState } from "react";
 import styles from "./contact.module.css";
 
 const ContactUs = () => {
-  useEffect(() => {
-    var map = new ol.Map({
-      target: "map",
-      layers: [
-        new ol.layer.Tile({
-          source: new ol.source.Stamen({ layer: "terrain" }),
-        }),
-      ],
-      view: new ol.View({
-        center: ol.proj.fromLonLat([77.1388, 28.7471]),
-        zoom: 12,
-      }),
-    });
-  }, []);
   const [formfields, setFormFields] = useState({
     ContactName: "",
     PhoneNumber: "",
@@ -100,12 +86,13 @@ const ContactUs = () => {
               />
             </div>
             <div className={styles.formItem}>
-              <input type="submit" value={"Submit Form"} />
+              <input
+                className={styles.submitBtn}
+                type="submit"
+                value={"Submit Query"}
+              />
             </div>
           </form>
-        </div>
-        <div className={styles.maps}>
-          <div id="map" className={"map"}></div>
         </div>
       </div>
     </>

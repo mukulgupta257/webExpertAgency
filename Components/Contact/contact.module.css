@@ -1,7 +1,9 @@
 .contact {
   display: flex;
   gap: 5px;
-  overflow: hidden  ;
+  overflow: hidden;
+  max-width: 1280px;
+  margin: 5px auto;
 }
 .contactFormContainer {
   width: 50vw;
@@ -19,7 +21,7 @@
 }
 .formItem {
   width: 400px;
-  height: 45px;
+  height: 65px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -29,17 +31,17 @@
   color: #808080;
 }
 .contactForm input {
-  width: 300px;
-  height: 30px;
-  padding: 0px 5px;
+  width: 350px;
+  height: 40px;
+  padding: 5px 10px;
   border-radius: 6px;
   border: 1px solid #000;
   outline: none;
 }
 .contactForm select {
   background-color: #fff;
-  width: 300px;
-  height: 30px;
+  width: 350px;
+  height: 40px;
   padding: 0px 5px;
   border-radius: 6px;
   border: 1px solid #000;
@@ -47,18 +49,21 @@
   color: #808080;
 }
 .contactForm textarea {
-  width: 300px;
-  height: 90px;
+  width: 350px;
+  height: 100px;
   resize: none;
   border-radius: 6px;
-  padding: 0px 5px;
+  padding: 5px 10px;
   border: 1px solid #000;
   outline: none;
 }
-.maps {
-  width: 50vw;
-  height: 600px;
-  overflow: hidden;
+.submitBtn {
+  padding: 0 !important;
+  border: none !important;
+  font-size: 15px;
+  font-weight: 400;
+  background-color: saddlebrown;
+  color: #fff;
 }
 
 @media screen and (max-width: 500px) {
@@ -71,9 +76,15 @@
   }
   .formItem {
     width: 100%;
-    padding-left: 30px;
+    padding-left: 20px;
   }
-  .maps {
-    display: none;
+  .formItem input {
+    width: 95%;
+  }
+  .formItem select {
+    width: 95%;
+  }
+  .formItem textarea {
+    width: 95%;
   }
 }
